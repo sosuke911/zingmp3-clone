@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://static-zmp3.zmdcdn.me/skins/zmp3-v5.2/images/icon_zing_mp3_60.png"
+    />
+    <title>Zing MP3</title>
+  </head>
+  <body>
+    <div class="player">
+      <div class="sidebar">
+        <div class="sidebar__logo">
+          <a href="#">
+            <img
+              src="./assets/img/logo-light.svg"
+              alt=""
+              class="sidebar__img"
+            />
+          </a>
+        </div>
+        <div class="sidebar__lists-menu">
+          <!-- sidebar menu 1 -->
+          <div class="menu">
+            <div class="menu__item">
+              <i class="fa-solid fa-user menu__icon"></i>Cá Nhân
+            </div>
+            <div class="menu__item active__menu">
+              <i class="fa-solid fa-compact-disc menu__icon"></i>Khám Phá
+            </div>
+            <div class="menu__item">
+              <i class="fa-solid fa-chart-line menu__icon"></i>#zingchart
+            </div>
+            <div class="menu__item">
+              <i class="fa-solid fa-radio menu__icon"></i>Radio
+            </div>
+            <div class="menu__item">
+              <i class="fa-solid fa-newspaper menu__icon"></i>Theo Dõi
+            </div>
+            <div class="menu__border-bottom"></div>
+          </div>
+          <!-- end -->
+          <div class="menu">
+            <div class="menu__item">
+              <i class="fa-solid fa-music menu__icon"></i>Nhạc Mới
+            </div>
+            <div class="menu__item">
+              <i class="fa-solid fa-icons menu__icon"></i>Thể Loại
+            </div>
+            <div class="menu__item">
+              <i class="fa-solid fa-star menu__icon"></i>Top 100
+            </div>
+            <div class="menu__item">
+              <i class="fa-solid fa-tv menu__icon"></i>MV
+            </div>
+            <div class="menu__upgrade-vip">
+              <p class="menu__upgrade-title">
+                Nghe nhạc không quảng cáo cùng kho nhạc VIP
+              </p>
+              <button class="menu__upgrade-btn">Nâng cấp vip</button>
+            </div>
+            <div class="menu__border-bottom"></div>
+          </div>
+          <div class="menu">
+            <div class="menu__item">
+              <i class="fa-solid fa-plus menu__icon"></i>Tạo playlist mới
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <header class="header">
+          <div class="header__search">
+            <i class="fa-solid fa-magnifying-glass header__icon"></i>
+            <input
+              type="text"
+              class="header__input"
+              placeholder="Tìm kiếm bài hát, nghệ sĩ, lời bài hát ..."
+            />
+          </div>
+          <div class="header__other">
+            <div class="header__other-item" id="theme">
+              <i class="fa-solid fa-shirt"></i>
+            </div>
+            <div id="theme-hidden" class="header__title-hidden">Chủ đề</div>
+            <div class="header__other-item" id="upgrade">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <div class="header__title-hidden" id="upgrade-hidden">
+              Nâng cấp vip
+            </div>
+            <div class="header__other-item" id="upload">
+              <i class="fa-solid fa-upload"></i>
+            </div>
+            <div class="header__title-hidden" id="upload-hidden">Tải lên</div>
+            <div class="header__other-item" id="setting">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="header__title-hidden" id="setting-hidden">Cài đặt</div>
+            <div class="header__other-item">
+              <img src="./assets/img/avt.jpg" alt="" class="header__avatar" />
+            </div>
+          </div>
+        </header>
+        <div class="container">
+          <div class="playlist">
+            <div class="playlist__img">
+              <img src="./assets/img/user-playlist.jpg" alt="" />
+            </div>
+            <div class="playlist__title">
+              <h2>
+                Justatee
+                <i class="fa-solid fa-pen playlist__icon"></i>
+              </h2>
+              <p>
+                Tạo bởi <span style="font-weight: 500; color: #000">Bin</span>
+              </p>
+              <p>Công khai</p>
+            </div>
+            <button class="playlist__btn">
+              <i class="fa-solid fa-play"></i> Tiếp tục phát
+            </button>
+          </div>
+          <div class="songs">
+            <div class="songs__header">
+              <div class="songs__header-item">
+                <i class="fa-solid fa-arrow-down-a-z"></i> Bài Hát
+              </div>
+              <div class="songs__header-item">Album</div>
+              <div class="songs__header-item">Thời Gian</div>
+            </div>
+            <div class="song__list">
+              <div class="song song__playing">
+                <div class="song__main">
+                  <img class="song__img" src="./assets/img/song1.jpg" alt="" />
+                  <div>
+                    <div class="song__name">
+                      <h4>2AM</h4>
+                    </div>
+                    <div class="song__singer">Justatee, Bigdaddy</div>
+                  </div>
+                </div>
+                <div class="song__album">Dù anh có đứng lại (Single)</div>
+                <div class="song__time">04:18</div>
+              </div>
+              <!--  -->
+              <div class="song">
+                <div class="song__main">
+                  <img class="song__img" src="./assets/img/song1.jpg" alt="" />
+                  <div>
+                    <div class="song__name">
+                      <h4>2AM</h4>
+                    </div>
+                    <div class="song__singer">Justatee, Bigdaddy</div>
+                  </div>
+                </div>
+                <div class="song__album">Dù anh có đứng lại (Single)</div>
+                <div class="song__time">04:18</div>
+              </div>
+              <!--  -->
+              <div class="song">
+                <div class="song__main">
+                  <img class="song__img" src="./assets/img/song1.jpg" alt="" />
+                  <div>
+                    <div class="song__name">
+                      <h4>2AM</h4>
+                    </div>
+                    <div class="song__singer">Justatee, Bigdaddy</div>
+                  </div>
+                </div>
+                <div class="song__album">Dù anh có đứng lại (Single)</div>
+                <div class="song__time">04:18</div>
+              </div>
+              <!--  -->
+              <div class="song">
+                <div class="song__main">
+                  <img class="song__img" src="./assets/img/song1.jpg" alt="" />
+                  <div>
+                    <div class="song__name">
+                      <h4>2AM</h4>
+                    </div>
+                    <div class="song__singer">Justatee, Bigdaddy</div>
+                  </div>
+                </div>
+                <div class="song__album">Dù anh có đứng lại (Single)</div>
+                <div class="song__time">04:18</div>
+              </div>
+            </div>
+            <div class="song__total">
+              <p>4 bài hát • 17 phút</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="control">
+        <div class="control__song">
+          <div class="control__img">
+            <img src="./assets/img/song1.jpg" alt="" />
+          </div>
+          <div>
+            <div class="control__name">2AM</div>
+            <div class="control__singer">Justatee, Bigdaddy</div>
+          </div>
+          <div class="control__song-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+        <div class="control__player">
+          <div class="control__player-left">
+            <div class="control__list">
+              <div class="list__item">
+                <i class="fa-solid fa-shuffle"></i>
+              </div>
+              <div class="list__item">
+                <i class="fa-solid fa-backward-step"></i>
+              </div>
+              <div class="list__item">
+                <i class="fa-solid fa-pause"></i>
+              </div>
+              <div class="list__item">
+                <i class="fa-solid fa-forward-step"></i>
+              </div>
+              <div class="list__item">
+                <i class="fa-solid fa-repeat"></i>
+              </div>
+            </div>
+            <audio controls>
+              <source
+                src="./assets/audio/2AM-JustaTee-BigDaddy.mp3"
+                type="audio/mpeg"
+              />
+            </audio>
+          </div>
+          <div class="control__icon">
+            <i class="fa-solid fa-list"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
