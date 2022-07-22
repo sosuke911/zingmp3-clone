@@ -1,0 +1,74 @@
+@media (max-width: 740px) {
+  .player {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    overflow: visible;
+    height: auto;
+  }
+  .sidebar__img {
+    width: 40%;
+  }
+  .menu:nth-child(2),
+  .menu:nth-child(3) {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    /* flex-direction: column; */
+  }
+  .menu__item {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu__item span {
+    padding-top: 15px;
+  }
+  .menu__border-bottom {
+    display: none;
+  }
+  .menu__item {
+    text-align: center;
+  }
+
+  .main {
+    width: 100%;
+    /* overflow: visible; */
+  }
+  .header {
+    display: none;
+  }
+  .playlist {
+    display: none;
+  }
+  .songs {
+    width: 100%;
+    padding: 0;
+  }
+  .song__list {
+    /* overflow-y: visible; */
+  }
+  .control__song {
+    display: none;
+  }
+  .song__total {
+    display: none;
+  }
+  .control__player {
+    width: 100%;
+  }
+  .control__player {
+    padding: 0;
+  }
+  .control__player-left {
+    width: 100%;
+  }
+  .control__icon {
+    display: none;
+  }
+  .control {
+    position: static;
+  }
+}

@@ -149,36 +149,37 @@ for (let i = 0; i < songsEl.length; i++) {
     songsEl[i].classList.add("song__playing");
     controlEl.insertAdjacentHTML("afterbegin", html);
   });
-
-  //next, previous buttons
-
-  function nextSong() {
-    if (currentSong == 5) {
-      currentSong = 0;
-    } else {
-      currentSong = currentSong + 1;
-    }
-    $(".song__playing").classList.remove("song__playing");
-    songsEl[currentSong].classList.add("song__playing");
-    source.src = songs[currentSong].path;
-    $(".control__song").style.display = "none";
-    renderSongCurrent(songs[currentSong]);
-    audio.load();
-    audio.play();
-  }
-
-  function previousSong() {
-    if (currentSong == 0) {
-      currentSong = 5;
-    } else {
-      currentSong = currentSong - 1;
-    }
-    $(".song__playing").classList.remove("song__playing");
-    songsEl[currentSong].classList.add("song__playing");
-    source.src = songs[currentSong].path;
-    $(".control__song").style.display = "none";
-    renderSongCurrent(songs[currentSong]);
-    audio.load();
-    audio.play();
-  }
 }
+//next, previous buttons
+function nextSong() {
+  if (currentSong == 5) {
+    currentSong = 0;
+  } else {
+    currentSong = currentSong + 1;
+  }
+  $(".song__playing").classList.remove("song__playing");
+  songsEl[currentSong].classList.add("song__playing");
+  source.src = songs[currentSong].path;
+  $(".control__song").style.display = "none";
+  renderSongCurrent(songs[currentSong]);
+  audio.load();
+  audio.play();
+}
+
+function previousSong() {
+  if (currentSong == 0) {
+    currentSong = 5;
+  } else {
+    currentSong = currentSong - 1;
+  }
+  $(".song__playing").classList.remove("song__playing");
+  songsEl[currentSong].classList.add("song__playing");
+  source.src = songs[currentSong].path;
+  $(".control__song").style.display = "none";
+  renderSongCurrent(songs[currentSong]);
+  audio.load();
+  audio.play();
+}
+audio.onended = function () {
+  nextSong();
+};
