@@ -212,3 +212,11 @@ audio.onended = function () {
     }
   }
 };
+//remove album in mobile
+if ($(".sidebar").clientWidth < 740) {
+  $$(".songs__header-item")[1].remove();
+  const albumsEl = $$(".song__album");
+  for (let album of albumsEl) {
+    album.remove();
+  }
+}
