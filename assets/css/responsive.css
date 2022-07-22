@@ -35,7 +35,9 @@
 
   .main {
     width: 100%;
-    /* overflow: visible; */
+    overflow: visible;
+    height: auto;
+    margin-bottom: 90px;
   }
   .header {
     display: none;
@@ -48,7 +50,7 @@
     padding: 0;
   }
   .song__list {
-    /* overflow-y: visible; */
+    overflow-y: visible;
   }
   .control__song {
     display: none;
@@ -69,6 +71,6 @@
     display: none;
   }
   .control {
-    position: static;
+    position: fixed;
   }
 }
