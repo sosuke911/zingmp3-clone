@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link
       rel="stylesheet"
-      href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.min.css"
+      href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
@@ -18,6 +18,7 @@
       type="image/png"
       href="https://static-zmp3.zmdcdn.me/skins/zmp3-v5.2/images/icon_zing_mp3_60.png"
     />
+    <script defer src="./main.js"></script>
     <title>Zing MP3</title>
   </head>
   <body>
@@ -118,7 +119,11 @@
         <div class="container">
           <div class="playlist">
             <div class="playlist__img">
-              <img src="./assets/img/user-playlist.jpg" alt="" />
+              <img
+                src="./assets/img/user-playlist.jpg"
+                alt=""
+                id="img__album"
+              />
             </div>
             <div class="playlist__title">
               <h2>
@@ -143,7 +148,7 @@
               <div class="songs__header-item">Thời Gian</div>
             </div>
             <div class="song__list">
-              <div class="song song__playing">
+              <!-- <div class="song song__playing">
                 <div class="song__main">
                   <img class="song__img" src="./assets/img/song1.jpg" alt="" />
                   <div>
@@ -155,9 +160,9 @@
                 </div>
                 <div class="song__album">Dù anh có đứng lại (Single)</div>
                 <div class="song__time">04:18</div>
-              </div>
+              </div> -->
               <!--  -->
-              <div class="song">
+              <!-- <div class="song">
                 <div class="song__main">
                   <img class="song__img" src="./assets/img/song1.jpg" alt="" />
                   <div>
@@ -169,9 +174,9 @@
                 </div>
                 <div class="song__album">Dù anh có đứng lại (Single)</div>
                 <div class="song__time">04:18</div>
-              </div>
+              </div> -->
               <!--  -->
-              <div class="song">
+              <!-- <div class="song">
                 <div class="song__main">
                   <img class="song__img" src="./assets/img/song1.jpg" alt="" />
                   <div>
@@ -183,9 +188,9 @@
                 </div>
                 <div class="song__album">Dù anh có đứng lại (Single)</div>
                 <div class="song__time">04:18</div>
-              </div>
+              </div> -->
               <!--  -->
-              <div class="song">
+              <!-- <div class="song">
                 <div class="song__main">
                   <img class="song__img" src="./assets/img/song1.jpg" alt="" />
                   <div>
@@ -197,10 +202,10 @@
                 </div>
                 <div class="song__album">Dù anh có đứng lại (Single)</div>
                 <div class="song__time">04:18</div>
-              </div>
+              </div> -->
             </div>
             <div class="song__total">
-              <p>4 bài hát • 17 phút</p>
+              <!-- <p>4 bài hát • 17 phút</p> -->
             </div>
           </div>
         </div>
@@ -208,7 +213,7 @@
       <div class="control">
         <div class="control__song">
           <div class="control__img">
-            <img src="./assets/img/song1.jpg" alt="" />
+            <img src="./assets/img/song/song1.jpg" alt="" />
           </div>
           <div>
             <div class="control__name">2AM</div>
@@ -222,15 +227,16 @@
           <div class="control__player-left">
             <div class="control__list">
               <div class="list__item">
-                <i class="fa-solid fa-shuffle"></i>
+                <i class="fa-solid fa-rotate-right"></i>
               </div>
-              <div class="list__item">
+              <div class="list__item" onclick="previousSong()">
                 <i class="fa-solid fa-backward-step"></i>
               </div>
-              <div class="list__item">
+              <!-- <div class="list__item">
                 <i class="fa-solid fa-pause"></i>
-              </div>
-              <div class="list__item">
+                <i class="fa-solid fa-play "></i>
+              </div> -->
+              <div class="list__item" onclick="nextSong()">
                 <i class="fa-solid fa-forward-step"></i>
               </div>
               <div class="list__item">
@@ -238,10 +244,7 @@
               </div>
             </div>
             <audio controls>
-              <source
-                src="./assets/audio/2AM-JustaTee-BigDaddy.mp3"
-                type="audio/mpeg"
-              />
+              <source src="./assets/audio/song1.mp3" type="audio/mpeg" />
             </audio>
           </div>
           <div class="control__icon">

@@ -91,6 +91,8 @@ html {
 
 .main {
   width: 85%;
+  height: calc(100vh - 90px);
+  overflow-y: scroll;
 }
 .header {
   display: flex;
@@ -215,6 +217,22 @@ html {
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition: 0.5s;
+}
+.spin {
+  border-radius: 50% !important;
+  animation-name: spin;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .playlist__title {
   text-align: center;
@@ -268,7 +286,7 @@ html {
 }
 .song {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin: 8px 0;
 
   border-radius: 10px;
@@ -284,6 +302,7 @@ html {
 }
 .song__main {
   display: flex;
+  flex: 1.5;
 }
 .song__img {
   width: 40px;
@@ -297,10 +316,14 @@ html {
   font-size: 12px;
 }
 .song__album {
+  flex: 1.5;
   margin: 10px;
+  padding-left: 40px;
 }
 .song__time {
   margin: 10px;
+  flex: 1;
+  text-align: right;
 }
 .song__total p {
   font-size: 12px;
@@ -322,13 +345,16 @@ html {
   justify-content: space-between;
 }
 .control__img {
+  margin-right: 20px;
 }
 .control__img img {
-  width: 80%;
+  width: 75px;
+  height: 75px;
   border-radius: 10px;
 }
 .control__song {
   display: flex;
+  width: 306px;
 }
 .control__name {
   margin-top: 16px;
