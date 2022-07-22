@@ -200,6 +200,7 @@ replayEl.addEventListener("click", function () {
     replayEl.dataset.replay = "true";
   }
 });
+// when audio ended
 audio.onended = function () {
   if ((replayEl.dataset.replay = "true")) {
     source.src = songs[currentSong].path;
