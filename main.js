@@ -180,6 +180,35 @@ function previousSong() {
   audio.load();
   audio.play();
 }
+const repeatEl = $("#repeat");
+repeatEl.addEventListener("click", function () {
+  if (repeatEl.dataset.repeat == "true") {
+    repeatEl.classList.remove("repeat");
+    repeatEl.dataset.repeat = "false";
+  } else if (repeatEl.dataset.repeat == "false") {
+    repeatEl.classList.add("repeat");
+    repeatEl.dataset.repeat = "true";
+  }
+});
+const replayEl = $("#replay");
+replayEl.addEventListener("click", function () {
+  if (replayEl.dataset.replay == "true") {
+    replayEl.classList.remove("replay");
+    replayEl.dataset.replay = "false";
+  } else if (replayEl.dataset.replay == "false") {
+    replayEl.classList.add("replay");
+    replayEl.dataset.replay = "true";
+  }
+});
 audio.onended = function () {
-  nextSong();
+  if ((replayEl.dataset.replay = "true")) {
+    source.src = songs[currentSong].path;
+    audio.load();
+    audio.play();
+  } else {
+    if (currentSong == 5 && repeatEl.dataset.repeat == "false") {
+    } else {
+      nextSong();
+    }
+  }
 };

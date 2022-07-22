@@ -402,7 +402,12 @@ audio {
   padding: 40px 45px;
   font-size: 15px;
 }
-
+.repeat {
+  color: #ffdb00;
+}
+.replay {
+  color: orange;
+}
 ::-webkit-scrollbar {
   width: 5px;
 }
