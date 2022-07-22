@@ -16,7 +16,6 @@
   }
   .menu {
     display: flex;
-    /* flex-direction: column; */
   }
   .menu__icon {
     margin: 0;
