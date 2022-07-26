@@ -283,6 +283,7 @@ html {
 }
 .song__list {
   overflow-y: scroll;
+  height: 60vh;
 }
 .song {
   display: flex;

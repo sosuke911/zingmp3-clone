@@ -53,6 +53,7 @@
   }
   .song__list {
     overflow-y: visible;
+    height: auto;
   }
   .control__song {
     display: none;

@@ -47,6 +47,14 @@ const songs = [
     album: "Cơn Mưa Cuối (Single)",
     time: "5:28",
   },
+  {
+    name: "Real Love",
+    singer: "Justatee, Kimmese",
+    path: "./assets/audio/song7.mp3",
+    image: "./assets/img/song/song7.jpg",
+    album: "She Neva Knows (Single)",
+    time: "3:36",
+  },
 ];
 
 const $ = document.querySelector.bind(document);
