@@ -160,7 +160,7 @@ for (let i = 0; i < songsEl.length; i++) {
 }
 //next, previous buttons
 function nextSong() {
-  if (currentSong == 5) {
+  if (currentSong == songs.length - 1) {
     currentSong = 0;
   } else {
     currentSong = currentSong + 1;
@@ -176,7 +176,7 @@ function nextSong() {
 
 function previousSong() {
   if (currentSong == 0) {
-    currentSong = 5;
+    currentSong = songs.length - 1;
   } else {
     currentSong = currentSong - 1;
   }
@@ -210,17 +210,18 @@ replayEl.addEventListener("click", function () {
 });
 // when audio ended
 audio.onended = function () {
-  if ((replayEl.dataset.replay = "true")) {
+  if (replayEl.dataset.replay == "true") {
     source.src = songs[currentSong].path;
     audio.load();
     audio.play();
   } else {
-    if (currentSong == 5 && repeatEl.dataset.repeat == "false") {
+    if (currentSong == songs.length - 1 && repeatEl.dataset.repeat == "false") {
     } else {
       nextSong();
     }
   }
 };
+
 //remove album in mobile
 if ($(".sidebar").clientWidth < 740) {
   $$(".songs__header-item")[1].remove();
