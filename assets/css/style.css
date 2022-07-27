@@ -101,7 +101,7 @@ html {
 }
 .header__search {
   height: 40px;
-  width: 540px;
+  width: 555px;
   background-color: #f2f2f2;
   border-radius: 20px;
 }
@@ -452,6 +452,10 @@ audio {
   height: 5px;
   width: 50%;
   background-color: #c86dd7;
+}
+.volume,
+.change {
+  width: 15px;
 }
 ::-webkit-scrollbar {
   width: 5px;
