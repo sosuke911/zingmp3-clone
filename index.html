@@ -238,10 +238,10 @@
               <div class="list__item" onclick="previousSong()">
                 <i class="fa-solid fa-backward-step"></i>
               </div>
-              <!-- <div class="list__item">
+              <div class="list__item">
                 <i id="change-btn" class="change fa-solid fa-play"></i>
-                <i class="fa-solid fa-pause "></i>
-              </div> -->
+                <!-- <i class="fa-solid fa-pause "></i> -->
+              </div>
               <div class="list__item" onclick="nextSong()">
                 <i class="fa-solid fa-forward-step"></i>
               </div>
@@ -249,15 +249,24 @@
                 <i class="fa-solid fa-repeat"></i>
               </div>
             </div>
-            <!-- <div class="progress-song">
-              <div class="bar"></div>
-            </div> -->
-            <audio controls>
+            <div class="customize-progress">
+              <div class="current-time">00:00</div>
+              <div class="progress-song">
+                <div class="bar"></div>
+              </div>
+              <div class="duration-time">3:36</div>
+            </div>
+
+            <audio>
               <source src="./assets/audio/song1.mp3" type="audio/mpeg" />
             </audio>
           </div>
           <div class="control__icon">
-            <i class="fa-solid fa-list"></i>
+            <i id="volume-icon" class="volume fa-solid fa-volume-high"></i>
+            <!-- <i class="fa-solid fa-volume-xmark"></i> -->
+            <div class="progress-volume">
+              <div class="bar-volume"></div>
+            </div>
           </div>
         </div>
       </div>

@@ -355,7 +355,7 @@ html {
 }
 .control__song {
   display: flex;
-  width: 306px;
+  width: 255px;
 }
 .control__name {
   margin-top: 16px;
@@ -398,16 +398,60 @@ audio {
   width: 100%;
   /* margin-top: 19px; */
 }
-.control__icon {
-  width: 10%;
-  padding: 40px 45px;
-  font-size: 15px;
-}
+
 .repeat {
   color: #ffdb00;
 }
 .replay {
   color: orange;
+}
+.customize-progress {
+  width: 95%;
+  display: flex;
+}
+.progress-song {
+  margin-top: 7px;
+  height: 5px;
+  width: 85%;
+  background-color: #ccc;
+}
+.progress-song:hover {
+  cursor: pointer;
+}
+.current-time {
+  margin-right: 10px;
+}
+.duration-time {
+  margin-left: 10px;
+}
+.bar {
+  height: 5px;
+  width: 0%;
+  background-color: #000;
+}
+.control__icon {
+  width: 15%;
+  padding: 40px 0;
+  font-size: 15px;
+  display: flex;
+}
+#volume-icon:hover {
+  cursor: pointer;
+}
+.progress-volume {
+  height: 5px;
+  width: 65%;
+  background-color: #ccc;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.progress-volume:hover {
+  cursor: pointer;
+}
+.bar-volume {
+  height: 5px;
+  width: 50%;
+  background-color: #c86dd7;
 }
 ::-webkit-scrollbar {
   width: 5px;

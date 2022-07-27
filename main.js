@@ -85,12 +85,7 @@ const songsEl = $$(".song");
 const audio = $("audio");
 const source = $("source");
 songsEl[0].classList.add("song__playing");
-audio.onpause = function () {
-  $(".playlist__img img").classList.remove("spin");
-};
-audio.onplay = function () {
-  $(".playlist__img img").classList.add("spin");
-};
+
 //render total songs and times
 let totalMinutes = 0;
 let totalSeconds = 0;
@@ -208,6 +203,58 @@ replayEl.addEventListener("click", function () {
     replayEl.dataset.replay = "true";
   }
 });
+//format time
+function formatTime(sec_num) {
+  let hours = Math.floor(sec_num / 3600);
+  let minutes = Math.floor((sec_num - hours * 3600) / 60);
+  let seconds = Math.floor(sec_num - hours * 3600 - minutes * 60);
+
+  hours = hours < 10 ? (hours > 0 ? "0" + hours : 0) : hours;
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  return (hours !== 0 ? hours + ":" : "") + minutes + ":" + seconds;
+}
+
+//set progress
+function setProgress(e) {
+  const width = e.offsetX;
+  const progress = e.currentTarget;
+  const progressBarWidth = (width / progress.clientWidth) * 100;
+  let { duration } = audio;
+  bar.style.width = `${progressBarWidth}%`;
+
+  audio.currentTime = (width * duration) / progress.clientWidth;
+}
+const progressBar = document.querySelector(".progress-song");
+progressBar.addEventListener("click", function (e) {
+  console.log(e.currentTarget);
+  setProgress(e);
+  audio.play();
+});
+
+//progress bar
+const bar = document.querySelector(".bar");
+const currentTimeDisplay = document.querySelector(".current-time");
+const durationTimeDisplay = document.querySelector(".duration-time");
+function updateProgress() {
+  durationTimeDisplay.textContent = songs[currentSong].time;
+  const { currentTime, duration } = audio;
+  const percentWidth = (currentTime / duration) * 100;
+  bar.style.width = `${percentWidth}%`;
+
+  const time = formatTime(currentTime);
+
+  currentTimeDisplay.textContent = time;
+}
+if (!audio.ended) {
+  setInterval(updateProgress, 1000);
+}
+
 // when audio ended
 audio.onended = function () {
   if (replayEl.dataset.replay == "true") {
@@ -222,6 +269,33 @@ audio.onended = function () {
   }
 };
 
+//onclick pause/play btn
+const changeBtn = document.querySelector("#change-btn");
+changeBtn.addEventListener("click", function () {
+  if (document.querySelector(".change.fa-play")) {
+    changeBtn.classList.remove("fa-play");
+    changeBtn.classList.add("fa-pause");
+    audio.play();
+  } else {
+    changeBtn.classList.remove("fa-pause");
+    changeBtn.classList.add("fa-play");
+    audio.pause();
+  }
+});
+
+//onpause/play
+audio.onpause = function () {
+  $(".playlist__img img").classList.remove("spin");
+  changeBtn.classList.remove("fa-pause");
+  changeBtn.classList.add("fa-play");
+};
+audio.onplay = function () {
+  $(".playlist__img img").classList.add("spin");
+
+  changeBtn.classList.remove("fa-play");
+  changeBtn.classList.add("fa-pause");
+};
+
 //remove album in mobile
 if ($(".sidebar").clientWidth < 740) {
   $$(".songs__header-item")[1].remove();
@@ -230,3 +304,32 @@ if ($(".sidebar").clientWidth < 740) {
     album.remove();
   }
 }
+
+// ---- volume ----
+const volumeIcon = document.querySelector("#volume-icon");
+audio.volume = 0.5;
+volumeIcon.addEventListener("click", function () {
+  if (document.querySelector(".volume.fa-volume-high")) {
+    volumeIcon.classList.remove("fa-volume-high");
+    volumeIcon.classList.add("fa-volume-xmark");
+    audio.volume = 0;
+  } else {
+    volumeIcon.classList.remove("fa-volume-xmark");
+    volumeIcon.classList.add("fa-volume-high");
+    audio.volume = 0.5;
+  }
+});
+//set Volume
+const progressVolume = document.querySelector(".progress-volume");
+const barVolume = document.querySelector(".bar-volume");
+function setVolume(e) {
+  const width = e.offsetX;
+  const progress = e.currentTarget;
+  const progressBarWidth = (width / progress.clientWidth) * 100;
+  barVolume.style.width = `${progressBarWidth}%`;
+
+  audio.volume = width / progress.clientWidth;
+}
+progressVolume.addEventListener("click", function (e) {
+  setVolume(e);
+});

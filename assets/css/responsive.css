@@ -68,12 +68,22 @@
     padding: 0;
   }
   .control__player-left {
-    width: 100%;
+    width: 80%;
   }
   .control__icon {
-    display: none;
+    /* display: none; */
+    padding: 44px 0;
+    width: 18%;
   }
   .control {
     position: fixed;
+    padding: 8px;
+  }
+  .control__list {
+    margin-bottom: 8px;
+  }
+  .list__item {
+    font-size: 18px;
+    margin: 0px 15px;
   }
 }
